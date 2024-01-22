@@ -38,10 +38,10 @@ const AdminLayout = (props) => {
     return (
     <div id="app">
         <div className="sidebar"  >
-            <div className="idebar-wrapper">
+            <div className="sidebar-wrapper">
                 <div className="columns">
                     <div className="column logo-area">
-                        <FontAwesomeIcon icon="outlined-account-circle"  />
+                        <FontAwesomeIcon icon="id-card"  />
                         <h1>ADMIN Area</h1>
                     </div>
                 </div>
@@ -50,14 +50,14 @@ const AdminLayout = (props) => {
                     <ul className="nav" >
                         <li>
                             <Link to="/admin/home" className="top" >
-                            <FontAwesomeIcon icon="outlined-home"  />
+                            <FontAwesomeIcon icon="home-alt"  />
                             <p>Home</p>
                         </Link>
                     </li>
 
                     <li>
                         <a href="#" onClick={logout}  className="top">
-                        <FontAwesomeIcon icon="right-from-bracket"  />
+                        <FontAwesomeIcon icon="arrow-right-from-bracket"  />
                         <p>Logout</p>
                     </a>
                 </li>

@@ -26,12 +26,13 @@
 
 }
 div.logo-area {
-    padding-top:50px;
-    padding-left:30px;
+    padding-top:60px;
+    padding-left:40px;
 }
-div.logo-area .q-icon {
+div.logo-area svg {
     color:#FFF;
-    font-size: 45px;
+    font-size: 32px;
+    margin-top:8px;
     float:left;
 }
 div.logo-area h1 {
@@ -180,7 +181,7 @@ div.sidebar-wrapper::-webkit-scrollbar
 .nav li>a p {
     float:left;
 }
-.nav .q-icon{
+.nav svg{
     float:left;
     font-size: 23px;
     margin-right: 30px;
