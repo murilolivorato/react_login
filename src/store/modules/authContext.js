@@ -29,7 +29,7 @@ export const AuthContextProvider = (props) => {
     }, []);
 
     const loginHandler = (currentUserData) => {
-        const tokenData = Object.assign({},{"email": currentUserData.email, "name": currentUserData.name, "last_name": currentUserData.last_name, "is_manager": currentUserData.is_manager, "token": currentUserData.token})
+        const tokenData = Object.assign({},{"email": currentUserData.email, "name": currentUserData.name, "last_name": currentUserData.last_name, "token": currentUserData.token})
         setCurrentUser(tokenData);
         localStorage.setItem('currentUser', JSON.stringify(tokenData));
     };

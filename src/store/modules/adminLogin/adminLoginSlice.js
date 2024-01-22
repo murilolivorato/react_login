@@ -12,11 +12,11 @@ const adminLoginSlice = createSlice({
     }
 })
 
-export const getSSOLogin = () => {
-    return async (dispatch) => {
+export const store = (data) => {
+    return async () => {
         const fetchData = async () => {
-            const response = await axios.get(process.env.REACT_APP_API_URL + 'api/sso-login')
-            return await response.data;
+            const response = await axios.post(process.env.REACT_APP_API_URL + 'api/post-login', data)
+            return await response.data.access_token;
         };
 
         try {
@@ -27,30 +27,13 @@ export const getSSOLogin = () => {
     }
 }
 
-export const getAuth = (data) => {
-    return async (dispatch) => {
-        const fetchData = async () => {
-            const response = await axios.post(process.env.REACT_APP_API_URL + 'api/get-auth', data)
-            return await response.data;
-        };
-
-        try {
-            return await fetchData();
-        } catch (error) {
-            console.log('eerroorrr --->', error.response)
-            throw error.response
-        }
-    }
-}
-
-export const getCurrentUserInfo = (token) => {
-    return async (dispatch) => {
+export const getUserInfo = (token) => {
+    return async () => {
         const fetchData = async () => {
             const header = { headers: { Authorization: 'Bearer ' + token } }
-            const response = await axios.get(process.env.REACT_APP_API_URL + 'api/admin/load-user-info', header)
+            const response = await axios.post(process.env.REACT_APP_API_URL + 'api/user-info', null,  header)
             return await response.data;
         };
-
         try {
             return await fetchData();
         } catch (error) {
